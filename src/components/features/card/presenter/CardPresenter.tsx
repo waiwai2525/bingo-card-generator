@@ -15,7 +15,7 @@ type Props = {
   onPick: () => void;
 };
 
-export const BingoPresenter = ({ pep, peps, onPick }: Props) => {
+export const CardPresenter = ({ pep, peps, onPick }: Props) => {
   return (
     <Grid columns={1} padded>
       <Grid.Row>

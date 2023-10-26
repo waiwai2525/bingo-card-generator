@@ -1,5 +1,5 @@
-import { BingoContainer } from "../features/bingo/container/BingoContainer.tsx";
+import { CardContainer } from "../features/card/container/CardContainer.tsx";
 
 export const Top = () => {
-  return <BingoContainer />;
+  return <CardContainer />;
 };

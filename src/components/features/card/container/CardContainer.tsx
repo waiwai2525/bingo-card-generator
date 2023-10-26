@@ -3,9 +3,9 @@ import { useState } from "react";
 import { Pep } from "../bingo.type.ts";
 import { usePep } from "../hooks/usePep.tsx";
 import { useIterator } from "../hooks/useIterator.tsx";
-import { BingoPresenter } from "../presenter/BingoPresenter.tsx";
+import { CardPresenter } from "../presenter/CardPresenter.tsx";
 
-export const BingoContainer = () => {
+export const CardContainer = () => {
   const peps = usePep();
   const [pep, setPep] = useState<Pep>();
   const { index, next } = useIterator(75);
@@ -17,5 +17,5 @@ export const BingoContainer = () => {
     setPep(nextPep);
   };
 
-  return <BingoPresenter pep={pep} peps={peps} onPick={onPick} />;
+  return <CardPresenter pep={pep} peps={peps} onPick={onPick} />;
 };
