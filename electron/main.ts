@@ -21,7 +21,7 @@ const VITE_DEV_SERVER_URL = process.env["VITE_DEV_SERVER_URL"];
 
 function createWindow() {
   win = new BrowserWindow({
-    height: 610,
+    height: 415,
     width: 450,
     webPreferences: {
       preload: path.join(__dirname, "preload.js"),

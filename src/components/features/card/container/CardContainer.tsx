@@ -1,21 +1,12 @@
-import { useState } from "react";
-
-import { Pep } from "../bingo.type.ts";
-import { usePep } from "../hooks/usePep.tsx";
-import { useIterator } from "../hooks/useIterator.tsx";
+import { useRandom } from "../hooks/useRandom.tsx";
 import { CardPresenter } from "../presenter/CardPresenter.tsx";
 
 export const CardContainer = () => {
-  const peps = usePep();
-  const [pep, setPep] = useState<Pep>();
-  const { index, next } = useIterator(75);
+  const bs = useRandom(1, 15).slice(0, 5);
+  const is = useRandom(16, 30).slice(0, 5);
+  const ns = useRandom(31, 45).slice(0, 5);
+  const gs = useRandom(46, 60).slice(0, 5);
+  const os = useRandom(61, 75).slice(0, 5);
 
-  const onPick = () => {
-    next();
-    const nextPep = peps[index];
-    nextPep.isActive = true;
-    setPep(nextPep);
-  };
-
-  return <CardPresenter pep={pep} peps={peps} onPick={onPick} />;
+  return <CardPresenter  bs={bs} is={is} ns={ns} gs={gs} os={os}/>;
 };
